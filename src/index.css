@@ -9,5 +9,5 @@ body {
 #root {
   margin: 0 24px;
   position: relative;
-  min-height: 100hv;
+  min-height: 100vh;
 }
