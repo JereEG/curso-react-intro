@@ -1,0 +1,45 @@
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 50px 0px rgba(32, 35, 41, 0.15);
+}
+
+li:nth-child(even) {
+    background-color: #ffffff;
+    /* Alterna colores entre ítems */
+}
+
+span {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+span:first-child {
+    color: #36e23c;
+    /* Color de la marca de verificación */
+}
+
+span:last-child {
+    color: #000000;
+position: relative;
+    top: -30px;
+    
+}
+span:last-child:hover {
+    color: rgba(254, 46, 46, 1);
+    
+
+}
+
+p {
+    flex-grow: 1;
+    margin: 0 15px;
+    color: #333;
+    font-size: 16px;
+}
