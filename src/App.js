@@ -15,11 +15,15 @@ const defaultTodos = [
 
 function App() {
   const [todos, setTodos] = React.useState(defaultTodos);
-   const [searchValue, setSearchValue] = React.useState("");
+  const [searchValue, setSearchValue] = React.useState("");
 
-   console.log("Los usuarios buscan todo de " + searchValue);
+  console.log("Los usuarios buscan todo de " + searchValue);
+  // Filtrar los TODOs en base al searchValue
+  const filteredTodos = todos.filter((todo) => {
+    return todo.text.toLowerCase().includes(searchValue.toLowerCase());
+  });
   const completedTodos = todos.filter(
-    todo => !!todo.completed //!! conbierte en booleano a cualquier valor ejemplo null undefined 1 0 etc.
+    (todo) => !!todo.completed //!! conbierte en booleano a cualquier valor ejemplo null undefined 1 0 etc.
   ).length;
   const totalTodos = todos.length;
 
@@ -29,7 +33,7 @@ function App() {
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
-        {defaultTodos.map((todo) => (
+        {filteredTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
