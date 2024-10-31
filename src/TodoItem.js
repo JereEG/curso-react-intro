@@ -17,11 +17,11 @@ function TodoItem(props) {
       >
         V
       </span> */}
-      <CompleteIcon />
+      <CompleteIcon completed={props.completed} onComplete={props.onComplete} />
       <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
         {props.text}
       </p>
-      <DeleteIcon />
+      <DeleteIcon onDelete={props.onDelete} />
       {/* <span
         // onClick={() => {
         // const todosActualizado = props.todos.filter(todo => props.text !== todo.text);
