@@ -1,9 +1,12 @@
-import './TodoItem.css';
+import { CompleteIcon } from "./CompleteIcon";
+import { DeleteIcon } from "./DeleteIcon";
+
+import "./TodoItem.css";
 
 function TodoItem(props) {
   return (
     <li className="TodoItem">
-      <span
+      {/* <span
         onClick={props.onComplete}
         // onClick={() => {
         // const todosActualizado = props.todos.map(todo => props.text === todo.text ? {...todo, completed: true} : todo);
@@ -13,11 +16,13 @@ function TodoItem(props) {
         className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
       >
         V
-      </span>
+      </span> */}
+      <CompleteIcon />
       <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
         {props.text}
       </p>
-      <span
+      <DeleteIcon />
+      {/* <span
         // onClick={() => {
         // const todosActualizado = props.todos.filter(todo => props.text !== todo.text);
         // props.setTodos(todosActualizado);
@@ -26,7 +31,7 @@ function TodoItem(props) {
         className="Icon Icon-delete"
       >
         X
-      </span>
+      </span> */}
     </li>
   );
 }
