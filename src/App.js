@@ -32,12 +32,14 @@ function App() {
       <TodoCounter completed={completedTodos} total={totalTodos} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
-      <TodoList>
+      <TodoList >
         {filteredTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            todos={todos}
+            setTodos={setTodos}
           />
         ))}
       </TodoList>
