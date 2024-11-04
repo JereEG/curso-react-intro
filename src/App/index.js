@@ -1,10 +1,6 @@
 import React from "react";
-import { TodoCounter } from "../TodoCounter";
-import { TodoSearch } from "../TodoSearch";
-import { TodoList } from "../TodoList";
-import { TodoItem } from "../TodoItem";
-import { CreateTodoButton } from "../CreateTodoButton";
 import { useLocalStorage } from "./useLocalStorage";
+import { AppUI } from "./AppUI";
 // const defaultTodos = [
 //   { text: "Cortar cebolla", completed: true },
 //   { text: "Tomar el Curso de Intro a React.js", completed: false },
@@ -42,26 +38,16 @@ function App() {
     saveTodos(newTodos);
   };
   return (
-    <>
-      <TodoCounter completed={completedTodos} total={totalTodos} />
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-
-      <TodoList>
-        {filteredTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            todos={todos}
-            // setTodos={setTodos}
-            onComplete={() => completedTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList>
-
-      <CreateTodoButton />
-    </>
+    <AppUI
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      completedTodo={completedTodo}
+      deleteTodo={deleteTodo}
+      filteredTodos={filteredTodos}
+      todos={todos}
+    />
   );
 }
 
