@@ -1,0 +1,52 @@
+/* Modal.css */
+
+.Modal {
+    position: fixed;
+    /* Fija la modal en la pantalla */
+    top: 50%;
+    /* Centrado vertical */
+    left: 50%;
+    /* Centrado horizontal */
+    transform: translate(-50%, -50%);
+    /* Ajuste de centramiento exacto */
+    background-color: white;
+    /* Fondo blanco para el contenido */
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra para destacar */
+    z-index: 1000;
+    /* Asegura que esté por encima de otros elementos */
+    width: 50%;
+    /* Ajuste de ancho */
+    max-width: 500px;
+    /* Máximo ancho */
+    /* Flex para centrar el contenido */
+        display: flex;
+        flex-direction: column;
+        /* Organiza en columnas */
+        align-items: center;
+        /* Centra horizontalmente */
+        justify-content: center;
+        /* Centra verticalmente */
+}
+
+/* Fondo oscuro */
+.ModalBackground::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* // Opacidad del fondo  */
+    z-index: 999;
+    /* // Asegura que esté detrás de la modal */
+}
+/* 
+.ModalBackground:hover {
+    cursor: pointer;
+} */
