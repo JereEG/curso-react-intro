@@ -1,0 +1,46 @@
+form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    /* font-family: 'Monserrat'; */
+    font-weight: bold;
+    
+
+}
+label {
+    margin: 3%;
+    text-align: center;
+}
+textarea {
+    resize: none;
+    margin: 3%;
+    height: max-content;
+    justify-content: center;
+}
+.TodoForm-buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: .3%;
+    height: 20px;
+}
+
+.TodoForm-button--cancel {
+    border: none;
+    border-radius: 8px;
+    width: 20%;
+    max-width: 200px;
+    /* Establece un ancho máximo para que no sea demasiado grande */
+    height: 30px;
+}
+
+.TodoForm-button--add {
+    border: none;
+    background-color: #3fd4f7;
+    border-radius: 8px;
+    width: 20%;
+    max-width: 200px;
+
+    /* Establece un ancho máximo para que no sea demasiado grande */
+    height: 30px;
+    
+}
