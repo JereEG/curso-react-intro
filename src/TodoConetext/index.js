@@ -16,7 +16,11 @@ function TodoProvider({children}) {
     (todo) => !!todo.completed //!! conbierte en booleano a cualquier valor ejemplo null undefined 1 0 etc.
   ).length;
   const totalTodos = todos.length;
-
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({text, completed: false});
+    saveTodos(newTodos);
+  };
   const completedTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
@@ -63,6 +67,7 @@ function TodoProvider({children}) {
           error,
           openModal,
           setOpenModal,
+          addTodo,
         }}
       >
         {children}
